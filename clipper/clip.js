@@ -18,9 +18,9 @@ Usage: node clipper/clip.js <input video> [options]
 
 Options:
   -n, --count <n>        Number of clips to make (default 5)
-  -l, --length <sec>     Clip length in seconds (default 30)
-      --lead <0-1>       Where the peak sits inside the clip; 0.7 = 70% of the
-                         clip is build-up before the peak (default 0.7)
+  -l, --length <sec>     Clip length in seconds (default 20)
+      --lead <0-1>       Where the peak sits inside the clip; 0.4 = 40% of the
+                         clip is build-up before the peak (default 0.4)
       --min-gap <sec>    Minimum spacing between clip peaks (default = length)
       --window <sec>     Context window for "louder than usual" (default 60)
   -v, --vertical <mode>  none | blur | crop   (default blur)
@@ -164,8 +164,8 @@ async function main() {
     allowPositionals: true,
     options: {
       count: { type: 'string', short: 'n', default: '5' },
-      length: { type: 'string', short: 'l', default: '30' },
-      lead: { type: 'string', default: '0.7' },
+      length: { type: 'string', short: 'l', default: '20' },
+      lead: { type: 'string', default: '0.4' },
       'min-gap': { type: 'string' },
       window: { type: 'string', default: '60' },
       vertical: { type: 'string', short: 'v', default: 'blur' },

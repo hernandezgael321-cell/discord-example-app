@@ -8,7 +8,7 @@ vertical 9:16 video ready for Shorts, TikTok or Reels.
 Requires `ffmpeg` and `ffprobe` on your PATH. No npm installs needed.
 
 ```bash
-npm run clip -- my_stream.mp4                 # 5 vertical 30s clips -> clips/my_stream/
+npm run clip -- my_stream.mp4                 # 5 vertical 20s clips -> clips/my_stream/
 npm run clip -- my_stream.mp4 --dry-run       # just list the moments it found
 npm run clip -- my_stream.mp4 -n 10 -l 45     # 10 clips, 45s each
 npm run clip -- my_stream.mp4 -v crop         # center-crop to 9:16 instead of blur background
@@ -18,8 +18,8 @@ npm run clip -- my_stream.mp4 -v none         # keep the original aspect ratio
 | Option | Default | What it does |
 |---|---|---|
 | `-n, --count` | 5 | How many clips to make |
-| `-l, --length` | 30 | Clip length in seconds |
-| `--lead` | 0.7 | Where the peak sits in the clip (0.7 = 70% build-up, 30% payoff) |
+| `-l, --length` | 20 | Clip length in seconds |
+| `--lead` | 0.4 | Where the peak sits in the clip (0.4 = peak lands ~8s in). Kept early because most viewers swipe in the first 3s |
 | `--min-gap` | = length | Minimum seconds between two clip peaks |
 | `--window` | 60 | How much surrounding audio counts as "normal" for comparison |
 | `-v, --vertical` | blur | `blur`, `crop` or `none` |
